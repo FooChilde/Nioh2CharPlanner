@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;700&family=Sawarabi+Mincho&family=Bigelow+Rules&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="coreStatArrays.js"></script>
+		<title>
+			NiohCharPlanner-v0.2
+		</title>
+	</head>
+	<body onload="proofOfConceptAlert()">
+		<h1>
+			<span id="kanjiHeader">仁王</span>
+		</h1>
+		<h1 class="plannerTitle">
+			NIOH 2 CHARACTER PLANNER v0.2
+		</h1>
+		<div class="plannerTableGroup" id="topTableGroup">
+			<table class="topTableLeft">
+				<thead>
+					<tr>
+						<th colspan="3">
+							Starting Weapons
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingSword" onclick="return validateStarting();">Sword</td>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingSpear" onclick="return validateStarting();">Spear</td>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingAxe" onclick="return validateStarting();">Axe</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingTonfas" onclick="return validateStarting();">Tonfas</td>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingOdachi" onclick="return validateStarting();">Odachi</td>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingHatchets" onclick="return validateStarting();">Hatchets</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingKusarigama" onclick="return validateStarting();">Kusarigama</td>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingDualSwords" onclick="return validateStarting();">Dual Swords</td>
+						<td><input type="checkbox" name="startingWeapons" value="1" id="startingSwitchglaive" onclick="return validateStarting();">Switchglaive</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="topTableRight">
+				<thead>
+					<tr>
+						<th colspan="1">
+							Starting Guardian Spirit
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="checkbox" name="startingSpirit" value="1" id="startingAme" onclick="return validateStarting();">Ame-no-Mitori</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="startingSpirit" value="1" id="startingMakami" onclick="return validateStarting();">Makami</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="startingSpirit" value="1" id="startingKagewani" onclick="return validateStarting();">Kagewani</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="plannerTableGroup" id="statTableGroup">
+			<!-- Start Stat Point Section -->
+
+			<table class="statsTableLeft">
+				<tr>
+					<td class="statsLeftColumn">Constitution</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statConstitutionDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalConstitution">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statConstitutionUp()" value=">">
+					</td>
+				</tr>
+				<tr>
+					<td class="statsLeftColumn">Heart</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statHeartDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalHeart">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statHeartUp()" value=">">
+					</td>
+				</tr>
+				<tr>
+					<td class="statsLeftColumn">Courage</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statCourageDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalCourage">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statCourageUp()" value=">">
+					</td>
+				</tr>
+				<tr>
+					<td class="statsLeftColumn">Stamina</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statStaminaDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalStamina">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statStaminaUp()" value=">">
+					</td>
+				</tr>
+				<tr>
+					<td class="statsLeftColumn">Strength</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statStrengthDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalStrength">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statStrengthUp()" value=">">
+					</td>
+				</tr>
+				<tr>
+					<td class="statsLeftColumn">Skill</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statSkillDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalSkill">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statSkillUp()" value=">">
+					</td>
+				</tr>
+				<tr>
+					<td class="statsLeftColumn">Dexterity</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statDexterityDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalDexterity">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statDexterityUp()" value=">">
+					</td>
+				</tr>
+				<tr>
+					<td class="statsLeftColumn">Magic</td>
+					<td>
+						<input type="button" class="statButtonDecrease" onclick="statMagicDown()" value="<">
+					</td>
+					<td class="statCells">
+						<span id="totalMagic">5</span>
+					</td>
+					<td>
+						<input type="button" class="statButtonIncrease" onclick="statMagicUp()" value=">">
+					</td>
+				</tr>
+				<tr id="statLevelRow">
+					<td class="statsLeftColumn">Level
+						<br>
+					</td>
+					<td></td>
+					<td class="statCells">
+						<span id="totalLevel">1</span>
+					</td>
+					<td></td>
+				</tr>
+				<tfoot id="statCreditsRow">
+					<td colspan="4">
+						NiohPlanner (c) by <a href="http://www.reddit.com/u/michaellfoo">/u/michaellfoo</a> is licensed under a Creative Commons
+						<br>
+						Attribution-NonCommercial-ShareAlike 4.0 International License.
+					</td>
+				</tfoot>
+			</table>
+			<!-- End Stat Point Section -->
+			<!-- Start Stats Affected Section --> 
+			<table class="statsTableRight">
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Life: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalLife">880</span>
+					</td>
+				</tr>
+			 <!--	<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Amrita Needed for Next Level: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalAmritaNeeded">0</span>
+					</td>
+				</tr> -->
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Ki: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalKi">960</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Ki Recovery Speed: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalKiRecovery">294</span>
+					</td>
+				</tr>
+			 <!-- 	<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Attack (Melee Weapon 1): 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalAttackMeleeOne">0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Attack (Melee Weapon 2): 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalAttackMeleeTwo">0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Attack (Ranged Weapon 1): 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalAttackRangedOne">0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Attack (Ranged Weapon 2): 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalAttackRangedTwo">0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Defense: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalDefense">0</span>
+					</td>
+				</tr> -->
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Equipment Weight Max: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalEquipmentWeightMax">29.5</span>
+					</td>
+				</tr>
+			 <!-- 	<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Current Encumbrance: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalWeightPercent">00.0%</span>
+					</td>
+				</tr> -->
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Ki Pulse: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalKiPulse">300</span>
+					</td>
+				</tr>
+			 <!-- 	<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Samurai Skill Points: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalSamuraiSkillPoints">0</span>
+					</td>
+				</tr> -->
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Ninjutsu Power: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalNinjutsuPower">10</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Ninjutsu Capacity: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalNinjutsuCapacity">3</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Onmyo Magic Power: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalOnmyoMagicPower">10</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						Onmyo Magic Capacity: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalOnmyoMagicCapacity">3</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						vs Fire: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalDefenseFire">0.0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						vs Water: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalDefenseWater">0.0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						vs Lightning: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalDefenseLightning">0.0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						vs Poison: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalDefensePoison">0.0</span>
+					</td>
+				</tr>
+				<tr class="statsTableRightRows">
+					<td class="statsLeftColumn">
+						vs Paralysis: 
+					</td>
+					<td class="statsRightColumn">
+						<span id="totalDefenseParalysis">0.0</span>
+					</td>
+				</tr>
+			</table>
+			<!-- End Stats Affected Section --> 
+
+		</div>
+		<!-- Save Button -->
+		<button name="saveButton" class="bottomButtons" value="Save Build" onclick="featureUnavailable()">Save Build</button>
+		<!-- Reset Button -->
+		<button name="resetButton" class="bottomButtons" value="Reset" onclick="statReset()">Reset</button>
+
+	</body>
+
+	<footer>
+		<a href="http://teamninja-studio.com/?fbclid=IwAR1xHxYL4kHWvhqzCWBDOgxqO9tMQcdvvBW2Of_vzN7X9-SGxkN_UsDtfM4">
+			<img src="https://teamninja-studio.com/doa6/images/logo-tn.svg" width="80px" height="78px">
+		</a>
+		<a href="https://www.koeitecmoamerica.com/">
+			<img src="https://www.koeitecmoamerica.com/images/kt_logo_us.png" height="78px">
+		</a>
+		<br>
+		<a href="">
+			Contribute to the <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" height="14px"> Github Project
+		</a>
+	</footer>
+</html>

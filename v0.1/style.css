@@ -1,0 +1,167 @@
+html { 
+	background             : url(sec01-bg.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size   : cover;
+	-o-background-size     : cover;
+	background-size        : cover;
+}
+h1 {
+	margin     : 0px auto 10px auto;
+	text-shadow: 0 0 30px rgba(255,255,255,0.9);
+}
+body {
+	text-align    : center;
+	color         : rgb(235,235,235);
+	text-transform: uppercase;
+	position      : relative;
+	-webkit-user-select    : none; /* Safari */        
+	-moz-user-select       : none; /* Firefox */
+	-ms-user-select        : none; /* IE10+/Edge */
+	user-select            : none; /* Standard */
+	margin-bottom: 100px;
+}
+div {
+	position: relative;
+	margin  : 3px auto 3px auto;
+}
+table {
+	border-width    : 2px;
+	border-color    : rgba(210,180,0,0.4);
+	border-style    : solid;
+	background-color: rgba(220,220,220,0.1);
+	font-family     : 'Alegreya Sans', sans-serif;
+	text-align      : left;
+	display         : inline-block;
+}
+tbody {
+	width: 700px;
+}
+th {
+	text-align      : center;
+	border-width    : 0px;
+	border-bottom   : 1px;
+	border-color    : rgba(210,180,0,0.2);
+	border-style    : solid;
+	background-color: rgba(30,30,30,0.2);
+	color           : rgba(255,255,255,0.5);
+	text-shadow     : 0 0 16px rgba(255,255,255,0.5);
+}
+.plannerTitle {
+	text-transform: none;
+}
+.plannerTableGroup {
+	min-width: 372px;
+	max-width: 700px;
+}
+.topTableLeft {
+	font-size   : 16px;
+	table-layout: fixed;
+}
+.topTableRight {
+	font-size   : 16px;
+	table-layout: fixed;
+}
+.statsTableLeft {
+	width      : 330px;
+	font-size  : 25px;
+	line-height: 1.0;
+}
+.statsTableRight {
+	font-size: 20px;
+}
+.statCells {
+	padding-left : 20px;
+	text-align   : center;
+	padding-right: 10px;
+	padding-left : 10px;
+	column-width : 20px;
+}
+.statButtonDecrease {
+	font-family      : 'Bigelow Rules', cursive;
+	font-size        : 40px;
+	color            : rgba(250,250,250,0.8);
+	background-color : Transparent;
+	background-repeat:no-repeat;
+	border           : none;
+	cursor           :pointer;
+	overflow         : hidden;
+	line-height      : 0.8;
+}
+.statButtonIncrease {
+	font-family      : 'Bigelow Rules', cursive;
+	font-size        : 40px;
+	color            : rgba(250,250,250,0.8);
+	background-color : Transparent;
+	background-repeat:no-repeat;
+	border           : none;
+	cursor           :pointer;
+	overflow         : hidden;
+	line-height      : 0.8;
+}
+.statsLeftColumn {
+	padding-left: 6px;
+	width       : 72%;
+}
+.statsRightColumn {
+	width     : 20%;
+	text-align: center;
+}
+.statsTableRightRows {
+	background-color: rgba(30,30,30,0.3);
+}
+#statLevelRow {
+	color      : rgb(250,230,200);
+	text-shadow: 0 0 15px rgba(255,255,255,0.7);
+	line-height: 40px;
+}
+tfoot {
+	font-size     : 9px;
+	text-align    : center;
+	margin-top    : 30px;
+	padding-bottom: 5px;
+	color         : rgba(250,250,250,0.2);
+	line-height   : 16px;
+}
+#kanjiHeader {
+	font-family        : 'Sawarabi Mincho', sans-serif;
+	font-size          : 120px;
+	-webkit-text-stroke: thin;
+	margin             : auto auto 0px auto;
+}
+a {
+	color: rgba(250,250,250,0.2);
+}
+a:hover {
+	color: rgba(250,250,250,0.5);
+}
+button {
+    color: rgb(235,235,235);
+    background: rgba(220,220,220,0.1);
+    border: 1px rgba(210,180,0,0.4) solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+button:hover {
+    border: 1px rgba(210,180,0,0.4) solid;
+    box-shadow: 1px 1px 1px rgba(30,30,30,0.3);
+    color: rgb(250,230,200);
+    text-shadow: 0 0 15px rgba(255,255,255,0.7);
+    background: rgba(250,250,250,0.2);
+}
+button:active {
+    box-shadow: inset 1px 1px 1px rgba(230,230,230,0.2);   
+}
+footer {
+	font-size  : 10px;
+	font-family: 'Alegreya Sans', sans-serif;
+	color      : rgba(250,250,250,0.2);
+	height: 100px;
+	width: 100%;
+	padding-bottom: 20px;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(230,230,230,0.1));
+	position: absolute;
+	bottom: -160px;
+}
