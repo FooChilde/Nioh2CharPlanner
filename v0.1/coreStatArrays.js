@@ -226,16 +226,16 @@
 // Start Constitution Section
 	// Variables
 		var statLifeConstitution = new Array();
-		statLifeConstitution[00] = 0;
-		statLifeConstitution[01] = 0;
-		statLifeConstitution[02] = 0;
-		statLifeConstitution[03] = 0;
-		statLifeConstitution[04] = 0;
-		statLifeConstitution[05] = 0;
-		statLifeConstitution[06] = 30;
-		statLifeConstitution[07] = 55;
-		statLifeConstitution[08] = 80;
-		statLifeConstitution[09] = 100;
+		statLifeConstitution[0] = 0;
+		statLifeConstitution[1] = 0;
+		statLifeConstitution[2] = 0;
+		statLifeConstitution[3] = 0;
+		statLifeConstitution[4] = 0;
+		statLifeConstitution[5] = 0;
+		statLifeConstitution[6] = 30;
+		statLifeConstitution[7] = 55;
+		statLifeConstitution[8] = 80;
+		statLifeConstitution[9] = 100;
 		statLifeConstitution[10] = 120;
 		statLifeConstitution[11] = 135;
 		statLifeConstitution[12] = 150;
