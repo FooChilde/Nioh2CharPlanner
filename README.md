@@ -1,4 +1,4 @@
-#Nioh 2 Character Planner
+# Nioh 2 Character Planner
 
 A character planner designed for Nioh 2, a game developed by Team Ninja. The planner lets users build a character from scratch and modify stats and equipment to give them a build guideline to use in-game.
 
