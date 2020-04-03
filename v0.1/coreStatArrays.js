@@ -187,6 +187,33 @@
 
 // Update Build Function
 	function updateBuild() {
+		// Over 99 Limit
+		if ((baseConstitution + lvlConstitution) > 99) {
+			lvlConstitution = (99 - baseConstitution);
+		}
+		if ((baseHeart + lvlHeart) > 99) {
+			lvlHeart = (99 - baseHeart);
+		}
+		if ((baseCourage + lvlCourage) > 99) {
+			lvlCourage = (99 - baseCourage);
+		}
+		if ((baseStamina + lvlStamina) > 99) {
+			lvlStamina = (99 - baseStamina);
+		}
+		if ((baseStrength + lvlStrength) > 99) {
+			lvlStrength = (99 - baseStrength);
+		}
+		if ((baseSkill + lvlSkill) > 99) {
+			lvlSkill = (99 - baseSkill);
+		}
+		if ((baseDexterity + lvlDexterity) > 99) {
+			lvlDexterity = (99 - baseDexterity);
+		}
+		if ((baseMagic + lvlMagic) > 99) {
+			lvlMagic = (99 - baseMagic);
+		}
+
+		// Level Numbers Update
 		if (((baseConstitution + baseHeart + baseCourage + baseStamina + baseStrength + baseSkill + baseDexterity + baseMagic) + (lvlConstitution + lvlHeart + lvlCourage + lvlStamina + lvlStrength + lvlSkill + lvlDexterity + lvlMagic) - 42) < 1) {
 			document.getElementById("totalLevel").textContent = 1;
 		}	else {
@@ -302,6 +329,30 @@
 		statLifeConstitution[73] = 1065;
 		statLifeConstitution[74] = 1080;
 		statLifeConstitution[75] = 1095;
+		statLifeConstitution[76] = 1110;
+		statLifeConstitution[77] = 1125;
+		statLifeConstitution[78] = 1140;
+		statLifeConstitution[79] = 1155;
+		statLifeConstitution[80] = 1170;
+		statLifeConstitution[81] = 1185;
+		statLifeConstitution[82] = 1200;
+		statLifeConstitution[83] = 1215;
+		statLifeConstitution[84] = 1230;
+		statLifeConstitution[85] = 1245;
+		statLifeConstitution[86] = 1260;
+		statLifeConstitution[87] = 1275;
+		statLifeConstitution[88] = 1290;
+		statLifeConstitution[89] = 1305;
+		statLifeConstitution[90] = 1320;
+		statLifeConstitution[91] = 1335;
+		statLifeConstitution[92] = 1350;
+		statLifeConstitution[93] = 1365;
+		statLifeConstitution[94] = 1380;
+		statLifeConstitution[95] = 1395;
+		statLifeConstitution[96] = 1410;
+		statLifeConstitution[97] = 1425;
+		statLifeConstitution[98] = 1440;
+		statLifeConstitution[99] = 1455;
 
 		var statDefensePoisonConstitution = new Array();
 		statDefensePoisonConstitution[0] = 0.0;
@@ -380,6 +431,30 @@
 		statDefensePoisonConstitution[73] = 12.8;
 		statDefensePoisonConstitution[74] = 12.9;
 		statDefensePoisonConstitution[75] = 13.0;
+		statDefensePoisonConstitution[76] = 13.1;
+		statDefensePoisonConstitution[77] = 13.2;
+		statDefensePoisonConstitution[78] = 13.3;
+		statDefensePoisonConstitution[79] = 13.4;
+		statDefensePoisonConstitution[80] = 13.5;
+		statDefensePoisonConstitution[81] = 13.6;
+		statDefensePoisonConstitution[82] = 13.7;
+		statDefensePoisonConstitution[83] = 13.8;
+		statDefensePoisonConstitution[84] = 13.9;
+		statDefensePoisonConstitution[85] = 14.0;
+		statDefensePoisonConstitution[86] = 14.1;
+		statDefensePoisonConstitution[87] = 14.2;
+		statDefensePoisonConstitution[88] = 14.3;
+		statDefensePoisonConstitution[89] = 14.4;
+		statDefensePoisonConstitution[90] = 14.5;
+		statDefensePoisonConstitution[91] = 14.6;
+		statDefensePoisonConstitution[92] = 14.7;
+		statDefensePoisonConstitution[93] = 14.8;
+		statDefensePoisonConstitution[94] = 14.9;
+		statDefensePoisonConstitution[95] = 15.0;
+		statDefensePoisonConstitution[96] = 15.1;
+		statDefensePoisonConstitution[97] = 15.2;
+		statDefensePoisonConstitution[98] = 15.3;
+		statDefensePoisonConstitution[99] = 15.4;
 
 		var statDefenseParalysisConstitution = new Array();
 		statDefenseParalysisConstitution[0] = 0.0;
@@ -458,6 +533,30 @@
 		statDefenseParalysisConstitution[73] = 12.8;
 		statDefenseParalysisConstitution[74] = 12.9;
 		statDefenseParalysisConstitution[75] = 13.0;
+		statDefenseParalysisConstitution[76] = 13.1;
+		statDefenseParalysisConstitution[77] = 13.2;
+		statDefenseParalysisConstitution[78] = 13.3;
+		statDefenseParalysisConstitution[79] = 13.4;
+		statDefenseParalysisConstitution[80] = 13.5;
+		statDefenseParalysisConstitution[81] = 13.6;
+		statDefenseParalysisConstitution[82] = 13.7;
+		statDefenseParalysisConstitution[83] = 13.8;
+		statDefenseParalysisConstitution[84] = 13.9;
+		statDefenseParalysisConstitution[85] = 14.0;
+		statDefenseParalysisConstitution[86] = 14.1;
+		statDefenseParalysisConstitution[87] = 14.2;
+		statDefenseParalysisConstitution[88] = 14.3;
+		statDefenseParalysisConstitution[89] = 14.4;
+		statDefenseParalysisConstitution[90] = 14.5;
+		statDefenseParalysisConstitution[91] = 14.6;
+		statDefenseParalysisConstitution[92] = 14.7;
+		statDefenseParalysisConstitution[93] = 14.8;
+		statDefenseParalysisConstitution[94] = 14.9;
+		statDefenseParalysisConstitution[95] = 15.0;
+		statDefenseParalysisConstitution[96] = 15.1;
+		statDefenseParalysisConstitution[97] = 15.2;
+		statDefenseParalysisConstitution[98] = 15.3;
+		statDefenseParalysisConstitution[99] = 15.4;
 
 	// Functions
 		function updateConstitution() {
@@ -564,6 +663,30 @@
 		statKiHeart[73] = 329;
 		statKiHeart[74] = 331;
 		statKiHeart[75] = 333;
+		statKiHeart[76] = 335;
+		statKiHeart[77] = 337;
+		statKiHeart[78] = 339;
+		statKiHeart[79] = 341;
+		statKiHeart[80] = 346;
+		statKiHeart[81] = 348;
+		statKiHeart[82] = 350;
+		statKiHeart[83] = 352;
+		statKiHeart[84] = 354;
+		statKiHeart[85] = 355;
+		statKiHeart[86] = 358;
+		statKiHeart[87] = 360;
+		statKiHeart[88] = 362;
+		statKiHeart[89] = 364;
+		statKiHeart[90] = 369;
+		statKiHeart[91] = 371;
+		statKiHeart[92] = 373;
+		statKiHeart[93] = 375;
+		statKiHeart[94] = 377;
+		statKiHeart[95] = 379;
+		statKiHeart[96] = 381;
+		statKiHeart[97] = 383;
+		statKiHeart[98] = 385;
+		statKiHeart[99] = 390;
 
 		var statKiRecoveryHeart = new Array();
 		statKiRecoveryHeart[0] = 0;
@@ -642,6 +765,30 @@
 		statKiRecoveryHeart[73] = 60;
 		statKiRecoveryHeart[74] = 61;
 		statKiRecoveryHeart[75] = 61;
+		statKiRecoveryHeart[76] = 61;
+		statKiRecoveryHeart[77] = 62;
+		statKiRecoveryHeart[78] = 62;
+		statKiRecoveryHeart[79] = 62;
+		statKiRecoveryHeart[80] = 62;
+		statKiRecoveryHeart[81] = 63;
+		statKiRecoveryHeart[82] = 63;
+		statKiRecoveryHeart[83] = 63;
+		statKiRecoveryHeart[84] = 64;
+		statKiRecoveryHeart[85] = 64;
+		statKiRecoveryHeart[86] = 64;
+		statKiRecoveryHeart[87] = 65;
+		statKiRecoveryHeart[88] = 65;
+		statKiRecoveryHeart[89] = 65;
+		statKiRecoveryHeart[90] = 65;
+		statKiRecoveryHeart[91] = 66;
+		statKiRecoveryHeart[92] = 66;
+		statKiRecoveryHeart[93] = 66;
+		statKiRecoveryHeart[94] = 66;
+		statKiRecoveryHeart[95] = 66;
+		statKiRecoveryHeart[96] = 66;
+		statKiRecoveryHeart[97] = 66;
+		statKiRecoveryHeart[98] = 67;
+		statKiRecoveryHeart[99] = 67;
 
 		var statDefenseFireHeart = new Array();
 		statDefenseFireHeart[0] = 0.0;
@@ -720,6 +867,30 @@
 		statDefenseFireHeart[73] = 12.8;
 		statDefenseFireHeart[74] = 12.9;
 		statDefenseFireHeart[75] = 13.0;
+		statDefenseFireHeart[76] = 13.1;
+		statDefenseFireHeart[77] = 13.2;
+		statDefenseFireHeart[78] = 13.3;
+		statDefenseFireHeart[79] = 13.4;
+		statDefenseFireHeart[80] = 13.5;
+		statDefenseFireHeart[81] = 13.6;
+		statDefenseFireHeart[82] = 13.7;
+		statDefenseFireHeart[83] = 13.8;
+		statDefenseFireHeart[84] = 13.9;
+		statDefenseFireHeart[85] = 14.0;
+		statDefenseFireHeart[86] = 14.1;
+		statDefenseFireHeart[87] = 14.2;
+		statDefenseFireHeart[88] = 14.3;
+		statDefenseFireHeart[89] = 14.4;
+		statDefenseFireHeart[90] = 14.5;
+		statDefenseFireHeart[91] = 14.6;
+		statDefenseFireHeart[92] = 14.7;
+		statDefenseFireHeart[93] = 14.8;
+		statDefenseFireHeart[94] = 14.9;
+		statDefenseFireHeart[95] = 15.0;
+		statDefenseFireHeart[96] = 15.1;
+		statDefenseFireHeart[97] = 15.2;
+		statDefenseFireHeart[98] = 15.3;
+		statDefenseFireHeart[99] = 15.4;
 
 	// Functions
 		function updateHeart() {
@@ -733,6 +904,10 @@
 
 		function statHeartUp() {
 			lvlHeart += 1;
+				if (lvlHeart > 94){
+					lvlHeart = 94;
+					return false;
+				}
 			updateBuild();
 		}
 
@@ -827,6 +1002,30 @@
 		statKiRecoveryCourage[73] = 146;
 		statKiRecoveryCourage[74] = 147;
 		statKiRecoveryCourage[75] = 148;
+		statKiRecoveryCourage[76] = 149;
+		statKiRecoveryCourage[77] = 150;
+		statKiRecoveryCourage[78] = 151;
+		statKiRecoveryCourage[79] = 152;
+		statKiRecoveryCourage[80] = 152;
+		statKiRecoveryCourage[81] = 153;
+		statKiRecoveryCourage[82] = 154;
+		statKiRecoveryCourage[83] = 155;
+		statKiRecoveryCourage[84] = 156;
+		statKiRecoveryCourage[85] = 157;
+		statKiRecoveryCourage[86] = 158;
+		statKiRecoveryCourage[87] = 159;
+		statKiRecoveryCourage[88] = 159;
+		statKiRecoveryCourage[89] = 160;
+		statKiRecoveryCourage[90] = 161;
+		statKiRecoveryCourage[91] = 162;
+		statKiRecoveryCourage[92] = 162;
+		statKiRecoveryCourage[93] = 163;
+		statKiRecoveryCourage[94] = 164;
+		statKiRecoveryCourage[95] = 164;
+		statKiRecoveryCourage[96] = 165;
+		statKiRecoveryCourage[97] = 165;
+		statKiRecoveryCourage[98] = 166;
+		statKiRecoveryCourage[99] = 167;
 
 		var statOnmyoMagicPowerCourage = new Array();
 		statOnmyoMagicPowerCourage[0] = 0;
@@ -905,6 +1104,30 @@
 		statOnmyoMagicPowerCourage[73] = 74;
 		statOnmyoMagicPowerCourage[74] = 75;
 		statOnmyoMagicPowerCourage[75] = 76;
+		statOnmyoMagicPowerCourage[76] = 77;
+		statOnmyoMagicPowerCourage[77] = 78;
+		statOnmyoMagicPowerCourage[78] = 79;
+		statOnmyoMagicPowerCourage[79] = 80;
+		statOnmyoMagicPowerCourage[80] = 81;
+		statOnmyoMagicPowerCourage[81] = 82;
+		statOnmyoMagicPowerCourage[82] = 83;
+		statOnmyoMagicPowerCourage[83] = 84;
+		statOnmyoMagicPowerCourage[84] = 85;
+		statOnmyoMagicPowerCourage[85] = 86;
+		statOnmyoMagicPowerCourage[86] = 87;
+		statOnmyoMagicPowerCourage[87] = 88;
+		statOnmyoMagicPowerCourage[88] = 89;
+		statOnmyoMagicPowerCourage[89] = 90;
+		statOnmyoMagicPowerCourage[90] = 91;
+		statOnmyoMagicPowerCourage[91] = 92;
+		statOnmyoMagicPowerCourage[92] = 93;
+		statOnmyoMagicPowerCourage[93] = 94;
+		statOnmyoMagicPowerCourage[94] = 95;
+		statOnmyoMagicPowerCourage[95] = 96;
+		statOnmyoMagicPowerCourage[96] = 97;
+		statOnmyoMagicPowerCourage[97] = 98;
+		statOnmyoMagicPowerCourage[98] = 99;
+		statOnmyoMagicPowerCourage[99] = 100;
 
 		var statDefenseLightningCourage = new Array();
 		statDefenseLightningCourage[0] = 0.0;
@@ -983,6 +1206,30 @@
 		statDefenseLightningCourage[73] = 12.9;
 		statDefenseLightningCourage[74] = 13.0;
 		statDefenseLightningCourage[75] = 13.1;
+		statDefenseLightningCourage[76] = 13.2;
+		statDefenseLightningCourage[77] = 13.3;
+		statDefenseLightningCourage[78] = 13.4;
+		statDefenseLightningCourage[79] = 13.5;
+		statDefenseLightningCourage[80] = 13.6;
+		statDefenseLightningCourage[81] = 13.7;
+		statDefenseLightningCourage[82] = 13.8;
+		statDefenseLightningCourage[83] = 13.9;
+		statDefenseLightningCourage[84] = 14.0;
+		statDefenseLightningCourage[85] = 14.1;
+		statDefenseLightningCourage[86] = 14.2;
+		statDefenseLightningCourage[87] = 14.3;
+		statDefenseLightningCourage[88] = 14.4;
+		statDefenseLightningCourage[89] = 14.5;
+		statDefenseLightningCourage[90] = 14.6;
+		statDefenseLightningCourage[91] = 14.7;
+		statDefenseLightningCourage[92] = 14.8;
+		statDefenseLightningCourage[93] = 14.9;
+		statDefenseLightningCourage[94] = 15.0;
+		statDefenseLightningCourage[95] = 15.1;
+		statDefenseLightningCourage[96] = 15.2;
+		statDefenseLightningCourage[97] = 15.3;
+		statDefenseLightningCourage[98] = 15.4;
+		statDefenseLightningCourage[99] = 15.5;
 
 	// Functions
 		function updtateCourage() {
@@ -996,6 +1243,11 @@
 
 		function statCourageUp() {
 			lvlCourage += 1;
+				if (lvlCourage > 94){
+					lvlCourage = 94;
+					return false;
+				}
+
 			updateBuild();
 		}
 
@@ -1090,6 +1342,30 @@
 		statLifeStamina[73] = 380;
 		statLifeStamina[74] = 385;
 		statLifeStamina[75] = 390;
+		statLifeStamina[76] = 395;
+		statLifeStamina[77] = 400;
+		statLifeStamina[78] = 405;
+		statLifeStamina[79] = 410;
+		statLifeStamina[80] = 415;
+		statLifeStamina[81] = 420;
+		statLifeStamina[82] = 425;
+		statLifeStamina[83] = 430;
+		statLifeStamina[84] = 435;
+		statLifeStamina[85] = 440;
+		statLifeStamina[86] = 445;
+		statLifeStamina[87] = 450;
+		statLifeStamina[88] = 455;
+		statLifeStamina[89] = 460;
+		statLifeStamina[90] = 465;
+		statLifeStamina[91] = 470;
+		statLifeStamina[92] = 475;
+		statLifeStamina[93] = 480;
+		statLifeStamina[94] = 485;
+		statLifeStamina[95] = 490;
+		statLifeStamina[96] = 495;
+		statLifeStamina[97] = 500;
+		statLifeStamina[98] = 505;
+		statLifeStamina[99] = 510;
 
 		var statEquipmentWeightMaxStamina = new Array();
 		statEquipmentWeightMaxStamina[0] = 0.0;
@@ -1168,6 +1444,30 @@
 		statEquipmentWeightMaxStamina[73] = 21.9;
 		statEquipmentWeightMaxStamina[74] = 22.0;
 		statEquipmentWeightMaxStamina[75] = 22.1;
+		statEquipmentWeightMaxStamina[76] = 22.2;
+		statEquipmentWeightMaxStamina[77] = 22.3;
+		statEquipmentWeightMaxStamina[78] = 22.4;
+		statEquipmentWeightMaxStamina[79] = 22.5;
+		statEquipmentWeightMaxStamina[80] = 22.6;
+		statEquipmentWeightMaxStamina[81] = 22.7;
+		statEquipmentWeightMaxStamina[82] = 22.8;
+		statEquipmentWeightMaxStamina[83] = 22.9;
+		statEquipmentWeightMaxStamina[84] = 23.0;
+		statEquipmentWeightMaxStamina[85] = 23.1;
+		statEquipmentWeightMaxStamina[86] = 23.2;
+		statEquipmentWeightMaxStamina[87] = 23.3;
+		statEquipmentWeightMaxStamina[88] = 23.4;
+		statEquipmentWeightMaxStamina[89] = 23.5;
+		statEquipmentWeightMaxStamina[90] = 23.6;
+		statEquipmentWeightMaxStamina[91] = 23.7;
+		statEquipmentWeightMaxStamina[92] = 23.8;
+		statEquipmentWeightMaxStamina[93] = 23.9;
+		statEquipmentWeightMaxStamina[94] = 24.0;
+		statEquipmentWeightMaxStamina[95] = 24.1;
+		statEquipmentWeightMaxStamina[96] = 24.2;
+		statEquipmentWeightMaxStamina[97] = 24.3;
+		statEquipmentWeightMaxStamina[98] = 24.4;
+		statEquipmentWeightMaxStamina[99] = 24.5;
 
 	// Functions
 		function updateStamina() {
@@ -1179,6 +1479,11 @@
 
 		function statStaminaUp() {
 			lvlStamina += 1;
+				if (lvlStamina > 94){
+					lvlStamina = 94;
+					return false;
+				}
+
 			updateBuild();
 		}
 
@@ -1273,6 +1578,30 @@
 		statEquipmentWeightMaxStrength[73] = 1.5;
 		statEquipmentWeightMaxStrength[74] = 1.5;
 		statEquipmentWeightMaxStrength[75] = 1.5;
+		statEquipmentWeightMaxStrength[76] = 1.5;
+		statEquipmentWeightMaxStrength[77] = 1.5;
+		statEquipmentWeightMaxStrength[78] = 1.6;
+		statEquipmentWeightMaxStrength[79] = 1.6;
+		statEquipmentWeightMaxStrength[80] = 1.6;
+		statEquipmentWeightMaxStrength[81] = 1.6;
+		statEquipmentWeightMaxStrength[82] = 1.6;
+		statEquipmentWeightMaxStrength[83] = 1.6;
+		statEquipmentWeightMaxStrength[84] = 1.6;
+		statEquipmentWeightMaxStrength[85] = 1.6;
+		statEquipmentWeightMaxStrength[86] = 1.6;
+		statEquipmentWeightMaxStrength[87] = 1.6;
+		statEquipmentWeightMaxStrength[88] = 1.6;
+		statEquipmentWeightMaxStrength[89] = 1.6;
+		statEquipmentWeightMaxStrength[90] = 1.7;
+		statEquipmentWeightMaxStrength[91] = 1.7;
+		statEquipmentWeightMaxStrength[92] = 1.7;
+		statEquipmentWeightMaxStrength[93] = 1.7;
+		statEquipmentWeightMaxStrength[94] = 1.7;
+		statEquipmentWeightMaxStrength[95] = 1.7;
+		statEquipmentWeightMaxStrength[96] = 1.7;
+		statEquipmentWeightMaxStrength[97] = 1.7;
+		statEquipmentWeightMaxStrength[98] = 1.7;
+		statEquipmentWeightMaxStrength[99] = 1.8;
 
 		var statKiPulseStrength = new Array();
 		statKiPulseStrength[0] = 0;
@@ -1351,6 +1680,30 @@
 		statKiPulseStrength[73] = 116;
 		statKiPulseStrength[74] = 117;
 		statKiPulseStrength[75] = 117;
+		statKiPulseStrength[76] = 118;
+		statKiPulseStrength[77] = 118;
+		statKiPulseStrength[78] = 119;
+		statKiPulseStrength[79] = 119;
+		statKiPulseStrength[80] = 120;
+		statKiPulseStrength[81] = 120;
+		statKiPulseStrength[82] = 121;
+		statKiPulseStrength[83] = 121;
+		statKiPulseStrength[84] = 122;
+		statKiPulseStrength[85] = 122;
+		statKiPulseStrength[86] = 123;
+		statKiPulseStrength[87] = 123;
+		statKiPulseStrength[88] = 124;
+		statKiPulseStrength[89] = 124;
+		statKiPulseStrength[90] = 125;
+		statKiPulseStrength[91] = 125;
+		statKiPulseStrength[92] = 126;
+		statKiPulseStrength[93] = 126;
+		statKiPulseStrength[94] = 127;
+		statKiPulseStrength[95] = 127;
+		statKiPulseStrength[96] = 128;
+		statKiPulseStrength[97] = 128;
+		statKiPulseStrength[98] = 129;
+		statKiPulseStrength[99] = 130;
 
 		var statDefenseWaterStrength = new Array();
 		statDefenseWaterStrength[0] = 0.0;
@@ -1429,6 +1782,30 @@
 		statDefenseWaterStrength[73] = 12.8;
 		statDefenseWaterStrength[74] = 12.9;
 		statDefenseWaterStrength[75] = 13.0;
+		statDefenseWaterStrength[76] = 13.1;
+		statDefenseWaterStrength[77] = 13.2;
+		statDefenseWaterStrength[78] = 13.3;
+		statDefenseWaterStrength[79] = 13.4;
+		statDefenseWaterStrength[80] = 13.5;
+		statDefenseWaterStrength[81] = 13.6;
+		statDefenseWaterStrength[82] = 13.7;
+		statDefenseWaterStrength[83] = 13.8;
+		statDefenseWaterStrength[84] = 13.9;
+		statDefenseWaterStrength[85] = 14.0;
+		statDefenseWaterStrength[86] = 14.1;
+		statDefenseWaterStrength[87] = 14.2;
+		statDefenseWaterStrength[88] = 14.3;
+		statDefenseWaterStrength[89] = 14.4;
+		statDefenseWaterStrength[90] = 14.5;
+		statDefenseWaterStrength[91] = 14.6;
+		statDefenseWaterStrength[92] = 14.7;
+		statDefenseWaterStrength[93] = 14.8;
+		statDefenseWaterStrength[94] = 14.9;
+		statDefenseWaterStrength[95] = 15.0;
+		statDefenseWaterStrength[96] = 15.1;
+		statDefenseWaterStrength[97] = 15.2;
+		statDefenseWaterStrength[98] = 15.3;
+		statDefenseWaterStrength[99] = 15.4;
 
 	// Functions
 		function updateStrength() {
@@ -1442,6 +1819,11 @@
 
 		function statStrengthUp() {
 			lvlStrength += 1;
+				if (lvlStrength > 94){
+					lvlStrength = 94;
+					return false;
+				}
+
 			updateBuild();
 		}
 
@@ -1536,6 +1918,30 @@
 		statKiPulseSkill[73] = 233;
 		statKiPulseSkill[74] = 234;
 		statKiPulseSkill[75] = 235;
+		statKiPulseSkill[76] = 236;
+		statKiPulseSkill[77] = 237;
+		statKiPulseSkill[78] = 238;
+		statKiPulseSkill[79] = 239;
+		statKiPulseSkill[80] = 240;
+		statKiPulseSkill[81] = 241;
+		statKiPulseSkill[82] = 242;
+		statKiPulseSkill[83] = 243;
+		statKiPulseSkill[84] = 244;
+		statKiPulseSkill[85] = 245;
+		statKiPulseSkill[86] = 246;
+		statKiPulseSkill[87] = 247;
+		statKiPulseSkill[88] = 248;
+		statKiPulseSkill[89] = 249;
+		statKiPulseSkill[90] = 250;
+		statKiPulseSkill[91] = 251;
+		statKiPulseSkill[92] = 252;
+		statKiPulseSkill[93] = 253;
+		statKiPulseSkill[94] = 254;
+		statKiPulseSkill[95] = 255;
+		statKiPulseSkill[96] = 256;
+		statKiPulseSkill[97] = 257;
+		statKiPulseSkill[98] = 258;
+		statKiPulseSkill[99] = 259;
 
 		var statNinjutsuPowerSkill = new Array();
 		statNinjutsuPowerSkill[0] = 0;
@@ -1614,6 +2020,30 @@
 		statNinjutsuPowerSkill[73] = 74;
 		statNinjutsuPowerSkill[74] = 75;
 		statNinjutsuPowerSkill[75] = 76;
+		statNinjutsuPowerSkill[76] = 77;
+		statNinjutsuPowerSkill[77] = 78;
+		statNinjutsuPowerSkill[78] = 79;
+		statNinjutsuPowerSkill[79] = 80;
+		statNinjutsuPowerSkill[80] = 81;
+		statNinjutsuPowerSkill[81] = 82;
+		statNinjutsuPowerSkill[82] = 83;
+		statNinjutsuPowerSkill[83] = 84;
+		statNinjutsuPowerSkill[84] = 85;
+		statNinjutsuPowerSkill[85] = 86;
+		statNinjutsuPowerSkill[86] = 87;
+		statNinjutsuPowerSkill[87] = 88;
+		statNinjutsuPowerSkill[88] = 89;
+		statNinjutsuPowerSkill[89] = 90;
+		statNinjutsuPowerSkill[90] = 91;
+		statNinjutsuPowerSkill[91] = 92;
+		statNinjutsuPowerSkill[92] = 93;
+		statNinjutsuPowerSkill[93] = 94;
+		statNinjutsuPowerSkill[94] = 95;
+		statNinjutsuPowerSkill[95] = 96;
+		statNinjutsuPowerSkill[96] = 97;
+		statNinjutsuPowerSkill[97] = 98;
+		statNinjutsuPowerSkill[98] = 99;
+		statNinjutsuPowerSkill[99] = 100;
 
 	// Functions
 		function updateSkill() {
@@ -1626,6 +2056,11 @@
 
 		function statSkillUp() {
 			lvlSkill += 1;
+				if (lvlSkill > 94){
+					lvlSkill = 94;
+					return false;
+				}
+
 			updateBuild();
 		}
 
@@ -1720,6 +2155,30 @@
 		statNinjutsuPowerDexterity[73] = 440;
 		statNinjutsuPowerDexterity[74] = 443;
 		statNinjutsuPowerDexterity[75] = 446;
+		statNinjutsuPowerDexterity[76] = 449;
+		statNinjutsuPowerDexterity[77] = 452;
+		statNinjutsuPowerDexterity[78] = 455;
+		statNinjutsuPowerDexterity[79] = 458;
+		statNinjutsuPowerDexterity[80] = 461;
+		statNinjutsuPowerDexterity[81] = 463;
+		statNinjutsuPowerDexterity[82] = 465;
+		statNinjutsuPowerDexterity[83] = 467;
+		statNinjutsuPowerDexterity[84] = 469;
+		statNinjutsuPowerDexterity[85] = 471;
+		statNinjutsuPowerDexterity[86] = 473;
+		statNinjutsuPowerDexterity[87] = 475;
+		statNinjutsuPowerDexterity[88] = 477;
+		statNinjutsuPowerDexterity[89] = 479;
+		statNinjutsuPowerDexterity[90] = 481;
+		statNinjutsuPowerDexterity[91] = 482;
+		statNinjutsuPowerDexterity[92] = 483;
+		statNinjutsuPowerDexterity[93] = 484;
+		statNinjutsuPowerDexterity[94] = 485;
+		statNinjutsuPowerDexterity[95] = 486;
+		statNinjutsuPowerDexterity[96] = 487;
+		statNinjutsuPowerDexterity[97] = 488;
+		statNinjutsuPowerDexterity[98] = 489;
+		statNinjutsuPowerDexterity[99] = 490;
 
 		var statNinjutsuCapacityDexterity = new Array();
 		statNinjutsuCapacityDexterity[0] = 0;
@@ -1822,6 +2281,30 @@
 		statNinjutsuCapacityDexterity[97] = 27;
 		statNinjutsuCapacityDexterity[98] = 27;
 		statNinjutsuCapacityDexterity[99] = 27;
+		statNinjutsuCapacityDexterity[76] = 27;
+		statNinjutsuCapacityDexterity[77] = 27;
+		statNinjutsuCapacityDexterity[78] = 27;
+		statNinjutsuCapacityDexterity[79] = 27;
+		statNinjutsuCapacityDexterity[80] = 27;
+		statNinjutsuCapacityDexterity[81] = 27;
+		statNinjutsuCapacityDexterity[82] = 27;
+		statNinjutsuCapacityDexterity[83] = 27;
+		statNinjutsuCapacityDexterity[84] = 27;
+		statNinjutsuCapacityDexterity[85] = 27;
+		statNinjutsuCapacityDexterity[86] = 27;
+		statNinjutsuCapacityDexterity[87] = 27;
+		statNinjutsuCapacityDexterity[88] = 27;
+		statNinjutsuCapacityDexterity[89] = 27;
+		statNinjutsuCapacityDexterity[90] = 27;
+		statNinjutsuCapacityDexterity[91] = 27;
+		statNinjutsuCapacityDexterity[92] = 27;
+		statNinjutsuCapacityDexterity[93] = 27;
+		statNinjutsuCapacityDexterity[94] = 27;
+		statNinjutsuCapacityDexterity[95] = 27;
+		statNinjutsuCapacityDexterity[96] = 27;
+		statNinjutsuCapacityDexterity[97] = 27;
+		statNinjutsuCapacityDexterity[98] = 27;
+		statNinjutsuCapacityDexterity[99] = 27;
 
 		var statDefensePoisonDexterity = new Array();
 		statDefensePoisonDexterity[0] = 0.0;
@@ -1900,6 +2383,30 @@
 		statDefensePoisonDexterity[73] = 12.9;
 		statDefensePoisonDexterity[74] = 13.0;
 		statDefensePoisonDexterity[75] = 13.1;
+		statDefensePoisonDexterity[76] = 13.2;
+		statDefensePoisonDexterity[77] = 13.3;
+		statDefensePoisonDexterity[78] = 13.4;
+		statDefensePoisonDexterity[79] = 13.5;
+		statDefensePoisonDexterity[80] = 13.6;
+		statDefensePoisonDexterity[81] = 13.7;
+		statDefensePoisonDexterity[82] = 13.8;
+		statDefensePoisonDexterity[83] = 13.9;
+		statDefensePoisonDexterity[84] = 14.0;
+		statDefensePoisonDexterity[85] = 14.1;
+		statDefensePoisonDexterity[86] = 14.2;
+		statDefensePoisonDexterity[87] = 14.3;
+		statDefensePoisonDexterity[88] = 14.4;
+		statDefensePoisonDexterity[89] = 14.5;
+		statDefensePoisonDexterity[90] = 14.6;
+		statDefensePoisonDexterity[91] = 14.7;
+		statDefensePoisonDexterity[92] = 14.8;
+		statDefensePoisonDexterity[93] = 14.9;
+		statDefensePoisonDexterity[94] = 15.0;
+		statDefensePoisonDexterity[95] = 15.1;
+		statDefensePoisonDexterity[96] = 15.2;
+		statDefensePoisonDexterity[97] = 15.3;
+		statDefensePoisonDexterity[98] = 15.4;
+		statDefensePoisonDexterity[99] = 15.5;
 
 		var statDefenseParalysisDexterity = new Array();
 		statDefenseParalysisDexterity[0] = 0.0;
@@ -1978,6 +2485,30 @@
 		statDefenseParalysisDexterity[73] = 12.9;
 		statDefenseParalysisDexterity[74] = 13.0;
 		statDefenseParalysisDexterity[75] = 13.1;
+		statDefenseParalysisDexterity[76] = 13.2;
+		statDefenseParalysisDexterity[77] = 13.3;
+		statDefenseParalysisDexterity[78] = 13.4;
+		statDefenseParalysisDexterity[79] = 13.5;
+		statDefenseParalysisDexterity[80] = 13.6;
+		statDefenseParalysisDexterity[81] = 13.7;
+		statDefenseParalysisDexterity[82] = 13.8;
+		statDefenseParalysisDexterity[83] = 13.9;
+		statDefenseParalysisDexterity[84] = 14.0;
+		statDefenseParalysisDexterity[85] = 14.1;
+		statDefenseParalysisDexterity[86] = 14.2;
+		statDefenseParalysisDexterity[87] = 14.3;
+		statDefenseParalysisDexterity[88] = 14.4;
+		statDefenseParalysisDexterity[89] = 14.5;
+		statDefenseParalysisDexterity[90] = 14.6;
+		statDefenseParalysisDexterity[91] = 14.7;
+		statDefenseParalysisDexterity[92] = 14.8;
+		statDefenseParalysisDexterity[93] = 14.9;
+		statDefenseParalysisDexterity[94] = 15.0;
+		statDefenseParalysisDexterity[95] = 15.1;
+		statDefenseParalysisDexterity[96] = 15.2;
+		statDefenseParalysisDexterity[97] = 15.3;
+		statDefenseParalysisDexterity[98] = 15.4;
+		statDefenseParalysisDexterity[99] = 15.5;
 
 	// Functions
 		function updateDexterity() {
@@ -1992,6 +2523,11 @@
 
 		function statDexterityUp() {
 			lvlDexterity +=1;
+				if (lvlDexterity > 94){
+					lvlDexterity = 94;
+					return false;
+				}
+
 			updateBuild();
 		}
 
@@ -2086,6 +2622,30 @@
 		statOnmyoMagicPowerMagic[73] = 440;
 		statOnmyoMagicPowerMagic[74] = 443;
 		statOnmyoMagicPowerMagic[75] = 446;
+		statOnmyoMagicPowerMagic[76] = 449;
+		statOnmyoMagicPowerMagic[77] = 452;
+		statOnmyoMagicPowerMagic[78] = 455;
+		statOnmyoMagicPowerMagic[79] = 458;
+		statOnmyoMagicPowerMagic[80] = 461;
+		statOnmyoMagicPowerMagic[81] = 463;
+		statOnmyoMagicPowerMagic[82] = 465;
+		statOnmyoMagicPowerMagic[83] = 467;
+		statOnmyoMagicPowerMagic[84] = 469;
+		statOnmyoMagicPowerMagic[85] = 471;
+		statOnmyoMagicPowerMagic[86] = 473;
+		statOnmyoMagicPowerMagic[87] = 475;
+		statOnmyoMagicPowerMagic[88] = 477;
+		statOnmyoMagicPowerMagic[89] = 479;
+		statOnmyoMagicPowerMagic[90] = 481;
+		statOnmyoMagicPowerMagic[91] = 482;
+		statOnmyoMagicPowerMagic[92] = 483;
+		statOnmyoMagicPowerMagic[93] = 484;
+		statOnmyoMagicPowerMagic[94] = 485;
+		statOnmyoMagicPowerMagic[95] = 486;
+		statOnmyoMagicPowerMagic[96] = 487;
+		statOnmyoMagicPowerMagic[97] = 488;
+		statOnmyoMagicPowerMagic[98] = 489;
+		statOnmyoMagicPowerMagic[99] = 490;
 
 		var statOnmyoMagicCapacityMagic = new Array();
 		statOnmyoMagicCapacityMagic[0] = 0;
@@ -2188,6 +2748,30 @@
 		statOnmyoMagicCapacityMagic[97] = 27;
 		statOnmyoMagicCapacityMagic[98] = 27;
 		statOnmyoMagicCapacityMagic[99] = 27;
+		statOnmyoMagicCapacityMagic[76] = 27;
+		statOnmyoMagicCapacityMagic[77] = 27;
+		statOnmyoMagicCapacityMagic[78] = 27;
+		statOnmyoMagicCapacityMagic[79] = 27;
+		statOnmyoMagicCapacityMagic[80] = 27;
+		statOnmyoMagicCapacityMagic[81] = 27;
+		statOnmyoMagicCapacityMagic[82] = 27;
+		statOnmyoMagicCapacityMagic[83] = 27;
+		statOnmyoMagicCapacityMagic[84] = 27;
+		statOnmyoMagicCapacityMagic[85] = 27;
+		statOnmyoMagicCapacityMagic[86] = 27;
+		statOnmyoMagicCapacityMagic[87] = 27;
+		statOnmyoMagicCapacityMagic[88] = 27;
+		statOnmyoMagicCapacityMagic[89] = 27;
+		statOnmyoMagicCapacityMagic[90] = 27;
+		statOnmyoMagicCapacityMagic[91] = 27;
+		statOnmyoMagicCapacityMagic[92] = 27;
+		statOnmyoMagicCapacityMagic[93] = 27;
+		statOnmyoMagicCapacityMagic[94] = 27;
+		statOnmyoMagicCapacityMagic[95] = 27;
+		statOnmyoMagicCapacityMagic[96] = 27;
+		statOnmyoMagicCapacityMagic[97] = 27;
+		statOnmyoMagicCapacityMagic[98] = 27;
+		statOnmyoMagicCapacityMagic[99] = 27;
 
 	// Functions
 		function updateMagic() {
@@ -2200,6 +2784,11 @@
 
 		function statMagicUp() {
 			lvlMagic +=1;
+				if (lvlMagic > 94){
+					lvlMagic = 94;
+					return false;
+				}
+
 			updateBuild();
 		}
 
