@@ -1,386 +1,560 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Bootstrap Integration -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Local Scripts/Styles -->
 	<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;700&family=Sawarabi+Mincho&family=Bigelow+Rules&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrapStyle.css">
 	<script type="text/javascript" src="coreStatArrays.js"></script>
+	
 		<title>
-			NiohCharPlanner-v0.2
+			NiohCharPlanner-v0.1.2
 		</title>
 	</head>
-	<body onload="proofOfConceptAlert()">
-		<h1>
-			<span id="kanjiHeader">仁王</span>
-		</h1>
-		<h1 class="plannerTitle">
-			NIOH 2 CHARACTER PLANNER v0.2
-		</h1>
-		<div class="plannerTableGroup" id="topTableGroup">
-			<table class="topTableLeft">
-				<thead>
-					<tr>
-						<th colspan="3">
-							Starting Weapons
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingSword" onclick="return validateStarting();">Sword</td>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingSpear" onclick="return validateStarting();">Spear</td>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingAxe" onclick="return validateStarting();">Axe</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingTonfas" onclick="return validateStarting();">Tonfas</td>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingOdachi" onclick="return validateStarting();">Odachi</td>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingHatchets" onclick="return validateStarting();">Hatchets</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingKusarigama" onclick="return validateStarting();">Kusarigama</td>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingDualSwords" onclick="return validateStarting();">Dual Swords</td>
-						<td><input type="checkbox" name="startingWeapons" value="1" id="startingSwitchglaive" onclick="return validateStarting();">Switchglaive</td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="topTableRight">
-				<thead>
-					<tr>
-						<th colspan="1">
-							Starting Guardian Spirit
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><input type="checkbox" name="startingSpirit" value="1" id="startingAme" onclick="return validateStarting();">Ame-no-Mitori</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="startingSpirit" value="1" id="startingMakami" onclick="return validateStarting();">Makami</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="startingSpirit" value="1" id="startingKagewani" onclick="return validateStarting();">Kagewani</td>
-					</tr>
-				</tbody>
-			</table>
+	<body onload="//proofOfConceptAlert()">
+		<div class="bg container-fluid">			
+			<h1>
+				<span id="kanjiHeader"><img src="https://portforward.com/nioh-2/nioh-2-logo.png" height="200px"></span>
+			</h1>
+			<h1>
+				NIOH 2 CHARACTER PLANNER v0.1.2
+			</h1>
+			<div id="tableStartingGroup">
+				<div class="container justify-content-center">
+					<div class="row justify-content-md-center">
+						<div class="col-sm-12 col-lg-6 give-pad">
+							<table id="tableStartingWeapons">
+								<thead id="tableHeadStartingWeapons">
+									<tr>
+										<th colspan="3">
+											Starting Weapons
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="tableStartingColumnA">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingSword" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/sword-nioh-2-wiki.png" class="statIconA">
+											Sword
+										</td>
+										<td class="tableStartingColumnB">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingTonfas" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/tonfa-nioh-2-wiki.png" class="statIconA">
+											Tonfas
+										</td>
+										<td class="tableStartingColumnC">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingKusarigama" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/kusarigama-nioh-2-wiki.png" class="statIconA">
+											Kusarigama
+										</td>
+									</tr>
+									<tr>
+										<td class="tableStartingColumnA">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingSpear" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/spear-nioh-2-wiki.png" class="statIconA">
+											Spear
+										</td>										
+										<td class="tableStartingColumnB">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingOdachi" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/odachi-nioh-2-wiki.png" class="statIconA">
+											Odachi
+										</td>
+										<td class="tableStartingColumnC">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingDualSwords" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/dual-swords-nioh-2-wiki.png" class="statIconA">
+											Dual Swords
+										</td>
+									</tr>
+									<tr>
+										<td class="tableStartingColumnA">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingAxe" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/axe-nioh-2-wiki.png" class="statIconA">
+											Axe
+										</td>
+										<td class="tableStartingColumnB">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingHatchets" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/hatchets-nioh-2-wiki.png" class="statIconA">
+											Hatchets
+										</td>
+										<td class="tableStartingColumnC">
+											<input type="checkbox" name="startingWeapons" value="1" id="startingSwitchglaive" onclick="return validateStarting();">
+											<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/switchglaive-nioh-2-wiki.png" class="statIconA">
+											Switchglaive
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-sm-12 col-lg-6 give-pad">
+							<div class="container" id="tableTopRight">
+								<div class="row d-flex justify-content-left">
+									<div class="col-sm-8" id="tableStartingGuardian">
+										<table>
+											<thead id="tableHeadStartingGuardian">
+												<tr>
+													<th colspan="1">
+														Starting Guardian Spirit
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<input type="checkbox" name="startingSpirit" value="1" id="startingAme" onclick="return validateStarting();">
+														<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/ame-no-mitori-nioh2-wiki-guide.png" class="statIconA">
+														Ame-no-Mitori
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<input type="checkbox" name="startingSpirit" value="1" id="startingMakami" onclick="return validateStarting();">
+														<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/makami-nioh2-wiki-guide.png" class="statIconA">
+														Makami
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<input type="checkbox" name="startingSpirit" value="1" id="startingKagewani" onclick="return validateStarting();">
+														<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/kagewani-nioh2-wiki-guide.png" class="statIconA">
+														Kagewani
+													</td>
+												</tr>
+											</tbody>
+										</table>										
+									</div>
+									<div class="card bg-transparent col-sm-3" id="tableTopRightButtons">
+										<div class="card-body">
+											<!-- Save Button -->
+											<button name="saveButton" class="tableTopRightButtons btn" value="Save Build" onclick="featureUnavailable()">Save Build</button>
+											<br>
+											<br>
+											<!-- Reset Button -->
+											<button name="resetButton" class="tableTopRightButtons btn" value="Reset" onclick="statReset()">Reset</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tableStatsGroup">
+				<div class="container justify-content-center">
+					<div class="row justify-content-md-center">
+						<div class="col-sm-12 col-lg-6 give-pad">
+							<table id="tableStatsLeft">
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/constitution-nioh-2-wiki.png" class="statIconA">Constitution
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statConstitutionDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalConstitution">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statConstitutionUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/heart-nioh-2-wiki.png" class="statIconA">Heart
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statHeartDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalHeart">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statHeartUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/courage-nioh-2-wiki.png" class="statIconA">Courage
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statCourageDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalCourage">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statCourageUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/stamina-nioh-2-wiki.png" class="statIconA">Stamina
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statStaminaDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalStamina">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statStaminaUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/strength-nioh-2-wiki.png" class="statIconA">Strength
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statStrengthDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalStrength">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statStrengthUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/skill-nioh-2-wiki.png" class="statIconA">Skill
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statSkillDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalSkill">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statSkillUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/dexterity-nioh-2-wiki.png" class="statIconA">Dexterity
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statDexterityDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalDexterity">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statDexterityUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/magic-nioh-2-wiki.png" class="statIconA">Magic
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsLeftColumnB">
+										<input type="button" class="statButtonDecrease" onclick="statMagicDown()" value="<">
+										<hr class="styleMiddleA">
+									</td>
+									<td class="tableStatsLeftColumnC">
+										<span id="totalMagic">5</span>
+										<hr class="styleMiddleB">
+									</td>
+									<td class="tableStatsLeftColumnD">
+										<input type="button" class="statButtonIncrease" onclick="statMagicUp()" value=">">
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsLeftColumnA statTotalLevelRow">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/samurai-nioh-2-wiki.png" class="statIconC">
+										Level
+										<br>
+									</td>
+									<td></td>
+									<td class="tableStatsLeftColumnC statTotalLevelRow">
+										<span id="totalLevel">1</span>
+									</td>
+									<td></td>
+								</tr>
+								<tfoot>
+									<td colspan="4">
+										NiohPlanner (c) by <a href="http://www.reddit.com/u/michaellfoo">/u/michaellfoo</a> is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+									</td>
+								</tfoot>
+							</table>				
+						</div>
+						<div class="col-sm-12 col-lg-6 give-pad">
+							<table id="tableStatsRight">
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/constitution-nioh-2-wiki.png" class="statIconB">Life: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalLife">880</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+							 <!--	<tr>
+									<td>
+										Amrita Needed for Next Level: 
+									</td>
+									<td>
+										<span id="totalAmritaNeeded">0</span>
+									</td>
+								</tr> -->
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/heart-nioh-2-wiki.png" class="statIconB">Ki: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalKi">960</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/heart-nioh-2-wiki.png" class="statIconB">Ki Recovery Speed: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalKiRecovery">294</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+							 <!-- 	<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/locked_icon_nioh_2_wiki_guide_50px.png" class="statIconB">Attack (Melee Weapon 1): 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalAttackMeleeOne">0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/locked_icon_nioh_2_wiki_guide_50px.png" class="statIconB">Attack (Melee Weapon 2): 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalAttackMeleeTwo">0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/locked_icon_nioh_2_wiki_guide_50px.png" class="statIconB">Attack (Ranged Weapon 1): 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalAttackRangedOne">0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/locked_icon_nioh_2_wiki_guide_50px.png" class="statIconB">Attack (Ranged Weapon 2): 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalAttackRangedTwo">0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/locked_icon_nioh_2_wiki_guide_50px.png" class="statIconB">Defense: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalDefense">0</span>
+										<hr class="styleLast">
+									</td>
+								</tr> -->
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/stamina-nioh-2-wiki.png" class="statIconB">Equipment Weight Max: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalEquipmentWeightMax">29.5</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+							 <!-- 	<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/locked_icon_nioh_2_wiki_guide_50px.png" class="statIconB">Current Encumbrance: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalWeightPercent">00.0%</span>
+										<hr class="styleLast">
+									</td>
+								</tr> -->
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/ki-pulse.png" class="statIconB">Ki Pulse: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalKiPulse">300</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+							 <!-- 	<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/locked_icon_nioh_2_wiki_guide_50px.png" class="statIconB">Samurai Skill Points: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalSamuraiSkillPoints">0</span>
+										<hr class="styleLast">
+									</td>
+								</tr> -->
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/ninjutsu-power.png" class="statIconB">Ninjutsu Power: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalNinjutsuPower">10</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/ninjutsu-capacity.png" class="statIconB">Ninjutsu Capacity: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalNinjutsuCapacity">3</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/onmyo-magic-power.png" class="statIconB">Onmyo Magic Power: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalOnmyoMagicPower">10</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/onmyo-magic-capacity.png" class="statIconB">Onmyo Magic Capacity: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalOnmyoMagicCapacity">3</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/vs-fire.png" class="statIconB">vs Fire: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalDefenseFire">0.0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/vs-water.png" class="statIconB">vs Water: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalDefenseWater">0.0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/vs-lightning.png" class="statIconB">vs Lightning: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalDefenseLightning">0.0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/vs-poison.png" class="statIconB">vs Poison: 
+										<hr class="styleFirst">
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalDefensePoison">0.0</span>
+										<hr class="styleLast">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableStatsRightColumnA">
+										<img src="https://nioh2.wiki.fextralife.com/file/Nioh-2/vs-paralysis.png" class="statIconB">vs Paralysis: 
+									</td>
+									<td class="tableStatsRightColumnB">
+										<span id="totalDefenseParalysis">0.0</span>
+									</td>
+								</tr>
+							</table>							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer container d-flex justify-content-center">
+				<div class="row">
+					<div class="col-sm-6">
+						<a href="http://teamninja-studio.com/?fbclid=IwAR1xHxYL4kHWvhqzCWBDOgxqO9tMQcdvvBW2Of_vzN7X9-SGxkN_UsDtfM4">
+							<img class="footerImage" src="https://teamninja-studio.com/doa6/images/logo-tn.svg" width="80px" height="78px">
+						</a>
+					</div>
+					<div class="col-sm-6">
+						<a href="https://www.koeitecmoamerica.com/">
+							<img class="footerImage" src="https://www.koeitecmoamerica.com/images/kt_logo_us.png" height="78px">
+						</a>
+					</div>
+					<div class="col-sm-12">
+						<a href="https://github.com/michaellfoo/Nioh2CharPlanner">
+							Contribute to the <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" height="14px"> Github Project
+						</a>
+					</div>
+				</div>
+			</div>				
 		</div>
-		<div class="plannerTableGroup" id="statTableGroup">
-			<!-- Start Stat Point Section -->
-
-			<table class="statsTableLeft">
-				<tr>
-					<td class="statsLeftColumn">Constitution</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statConstitutionDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalConstitution">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statConstitutionUp()" value=">">
-					</td>
-				</tr>
-				<tr>
-					<td class="statsLeftColumn">Heart</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statHeartDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalHeart">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statHeartUp()" value=">">
-					</td>
-				</tr>
-				<tr>
-					<td class="statsLeftColumn">Courage</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statCourageDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalCourage">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statCourageUp()" value=">">
-					</td>
-				</tr>
-				<tr>
-					<td class="statsLeftColumn">Stamina</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statStaminaDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalStamina">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statStaminaUp()" value=">">
-					</td>
-				</tr>
-				<tr>
-					<td class="statsLeftColumn">Strength</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statStrengthDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalStrength">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statStrengthUp()" value=">">
-					</td>
-				</tr>
-				<tr>
-					<td class="statsLeftColumn">Skill</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statSkillDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalSkill">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statSkillUp()" value=">">
-					</td>
-				</tr>
-				<tr>
-					<td class="statsLeftColumn">Dexterity</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statDexterityDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalDexterity">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statDexterityUp()" value=">">
-					</td>
-				</tr>
-				<tr>
-					<td class="statsLeftColumn">Magic</td>
-					<td>
-						<input type="button" class="statButtonDecrease" onclick="statMagicDown()" value="<">
-					</td>
-					<td class="statCells">
-						<span id="totalMagic">5</span>
-					</td>
-					<td>
-						<input type="button" class="statButtonIncrease" onclick="statMagicUp()" value=">">
-					</td>
-				</tr>
-				<tr id="statLevelRow">
-					<td class="statsLeftColumn">Level
-						<br>
-					</td>
-					<td></td>
-					<td class="statCells">
-						<span id="totalLevel">1</span>
-					</td>
-					<td></td>
-				</tr>
-				<tfoot id="statCreditsRow">
-					<td colspan="4">
-						NiohPlanner (c) by <a href="http://www.reddit.com/u/michaellfoo">/u/michaellfoo</a> is licensed under a Creative Commons
-						<br>
-						Attribution-NonCommercial-ShareAlike 4.0 International License.
-					</td>
-				</tfoot>
-			</table>
-			<!-- End Stat Point Section -->
-			<!-- Start Stats Affected Section --> 
-			<table class="statsTableRight">
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Life: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalLife">880</span>
-					</td>
-				</tr>
-			 <!--	<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Amrita Needed for Next Level: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalAmritaNeeded">0</span>
-					</td>
-				</tr> -->
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Ki: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalKi">960</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Ki Recovery Speed: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalKiRecovery">294</span>
-					</td>
-				</tr>
-			 <!-- 	<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Attack (Melee Weapon 1): 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalAttackMeleeOne">0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Attack (Melee Weapon 2): 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalAttackMeleeTwo">0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Attack (Ranged Weapon 1): 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalAttackRangedOne">0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Attack (Ranged Weapon 2): 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalAttackRangedTwo">0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Defense: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalDefense">0</span>
-					</td>
-				</tr> -->
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Equipment Weight Max: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalEquipmentWeightMax">29.5</span>
-					</td>
-				</tr>
-			 <!-- 	<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Current Encumbrance: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalWeightPercent">00.0%</span>
-					</td>
-				</tr> -->
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Ki Pulse: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalKiPulse">300</span>
-					</td>
-				</tr>
-			 <!-- 	<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Samurai Skill Points: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalSamuraiSkillPoints">0</span>
-					</td>
-				</tr> -->
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Ninjutsu Power: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalNinjutsuPower">10</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Ninjutsu Capacity: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalNinjutsuCapacity">3</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Onmyo Magic Power: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalOnmyoMagicPower">10</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						Onmyo Magic Capacity: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalOnmyoMagicCapacity">3</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						vs Fire: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalDefenseFire">0.0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						vs Water: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalDefenseWater">0.0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						vs Lightning: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalDefenseLightning">0.0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						vs Poison: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalDefensePoison">0.0</span>
-					</td>
-				</tr>
-				<tr class="statsTableRightRows">
-					<td class="statsLeftColumn">
-						vs Paralysis: 
-					</td>
-					<td class="statsRightColumn">
-						<span id="totalDefenseParalysis">0.0</span>
-					</td>
-				</tr>
-			</table>
-			<!-- End Stats Affected Section --> 
-
-		</div>
-		<!-- Save Button -->
-		<button name="saveButton" class="bottomButtons" value="Save Build" onclick="featureUnavailable()">Save Build</button>
-		<!-- Reset Button -->
-		<button name="resetButton" class="bottomButtons" value="Reset" onclick="statReset()">Reset</button>
-
 	</body>
-
-	<footer>
-		<a href="http://teamninja-studio.com/?fbclid=IwAR1xHxYL4kHWvhqzCWBDOgxqO9tMQcdvvBW2Of_vzN7X9-SGxkN_UsDtfM4">
-			<img src="https://teamninja-studio.com/doa6/images/logo-tn.svg" width="80px" height="78px">
-		</a>
-		<a href="https://www.koeitecmoamerica.com/">
-			<img src="https://www.koeitecmoamerica.com/images/kt_logo_us.png" height="78px">
-		</a>
-		<br>
-		<a href="https://github.com/michaellfoo/Nioh2CharPlanner">
-			Contribute to the <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" height="14px"> Github Project
-		</a>
-	</footer>
 </html>
