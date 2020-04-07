@@ -24,6 +24,7 @@ h1 {
 	font-family        : 'Sawarabi Mincho', sans-serif;
 	font-size          : 120px;
 	-webkit-text-stroke: thin;
+	filter: drop-shadow(0 0 1rem rgba(230,230,230,0.3));
 }
 .give-pad {
 	margin-top: 10px;
